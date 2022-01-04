@@ -2,6 +2,8 @@
 
 GitHub Action to sync one branch when another is updated.
 
+**Only change from fork is node version updated to 16**
+
 ## Inputs
 
 ### `GITHUB_TOKEN`
@@ -84,7 +86,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 16
       - name: Opening pull request
         id: pull
         uses: tretuna/sync-branches@1.4.0
