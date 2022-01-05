@@ -20,7 +20,7 @@ async function run() {
     console.log(
       `Should a pull request to ${toBranch} from ${fromBranch} be created?`
     );
-
+    
     const octokit = new github.getOctokit(githubToken);
 
     const { data: currentPulls } = await octokit.rest.pulls.list({
@@ -88,6 +88,7 @@ async function run() {
       core.setOutput("PULL_REQUEST_NUMBER", currentPull.number.toString());
     }
   } catch (error) {
+    console.error(error);
     core.setFailed(error.message);
   }
 }
