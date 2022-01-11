@@ -58,6 +58,8 @@ async function run() {
         });
 
         if (reviewers.length > 0 || team_reviewers.length > 0) {
+          console.log(reviewers.toString())
+          console.log(team_reviewers.toString())
           octokit.rest.pulls.requestReviewers({
             owner,
             repo,
