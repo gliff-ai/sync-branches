@@ -57,9 +57,11 @@ async function run() {
           draft: pullRequestIsDraft,
         });
 
+        console.log(reviewers.toString())
+        console.log(reviewers.length.toString())
+        console.log(team_reviewers.toString())
+        console.log(reviewers.length.toString())
         if (reviewers.length > 0 || team_reviewers.length > 0) {
-          console.log(reviewers.toString())
-          console.log(team_reviewers.toString())
           octokit.rest.pulls.requestReviewers({
             owner,
             repo,
